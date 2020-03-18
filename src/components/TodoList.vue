@@ -47,6 +47,7 @@ import Modal from './Modal'
 import { mapState, mapMutations } from "vuex";
 
 export default {
+  components:{ Modal },
   data() {
     return {      
       visibility:'all',
@@ -54,11 +55,7 @@ export default {
       showModal: false,    
       todoDetail:''     
     }
-  },
-  components:{ Modal },
-  created() {
-    this.allDoneCheck();
-  },
+  },  
   computed:{   
     ...mapState(['todoList','allDone']),
     allCount() {
@@ -82,6 +79,9 @@ export default {
       }
     }    
   },
+  created() {
+    this.allDoneCheck();
+  },
   watch: {
     activeCount:function() {
       this.allDoneCheck();
@@ -92,20 +92,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['shuffle', 'removeTodo', 'checkCompleted', 'todoListSet', 'allDoneChange']),
-    // shuffle: function () {
-    //   this.$store.commit('shuffle');
-    // },
-    // removeTodo:function(id){
-    //   this.$store.commit('removeTodo', {id});
-    // },
-    // checkCompleted:function(mode, id){
-    //   if(mode=='all'){
-    //     this.$store.commit('checkCompleted', {mode, allDone:this.allDone});
-    //   }else{
-    //     this.$store.commit('checkCompleted', {mode, id});  
-    //   }      
-    // },        
+    ...mapMutations(['shuffle', 'removeTodo', 'checkCompleted', 'todoListSet', 'allDoneChange']),         
     filters:function(visibility){
       this.visibility=visibility;      
     },

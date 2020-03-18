@@ -25,14 +25,14 @@ export default {
   computed:{
     ...mapState(['todoList', 'theme']),
   },
-  methods: {
-    ...mapMutations(['todoListSet'])
-  },
   watch: {
     todoList(todoList){      
       this.todoListSet(todoList)      
     }
-  }
+  },
+  methods: {
+    ...mapMutations(['todoListSet'])
+  },
 }
 </script>
 

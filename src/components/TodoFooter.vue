@@ -6,13 +6,11 @@
       </div>
       <Modal v-if="showModal">      
         <div slot="header"></div>
-        <div slot="body">할일을 모두 삭제하시겠어요?</div>
-        <template v-slot:footer>                      
-          <div class="btn-group">
-            <button class="modal-primary-button" @click="removeAll">OK</button>
-            <button class="modal-default-button" @click="showModal=false">Cancel</button>
-          </div>          
-        </template>
+        <div slot="body">할일을 모두 삭제하시겠어요?</div>        
+        <div slot="footer" class="btn-group">
+          <button class="modal-primary-button" @click="removeAll">OK</button>
+          <button class="modal-default-button" @click="showModal=false">Cancel</button>
+        </div>
       </Modal>
   </footer>
 </template>
@@ -22,17 +20,14 @@ import Modal from './Modal'
 import { mapState, mapMutations } from "vuex";
 
 export default {  
+  components:{ Modal },
   data() {
     return {
       showModal:false
     }
   },
-  components:{ Modal },
   computed: {
-    ...mapState(['todoList']),
-    // todoList(){
-    //   return this.$store.state.todoList;
-    // },    
+    ...mapState(['todoList']),      
     isRemoveCompleted:function(){
       var completedCount=this.todoList.filter( todo => todo.completed == true ).length;
       return completedCount ? true : false;            

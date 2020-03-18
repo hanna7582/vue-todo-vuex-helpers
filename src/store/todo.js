@@ -34,6 +34,7 @@ const state = {
     allDone: false
 }
 
+// 동기 처리
 const mutations = {
     // payload : 컴포넌트에서 전송되는 데이터
     addTodo(state, payload) {

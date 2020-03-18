@@ -13,19 +13,16 @@
 <script>
 import TodoMenu from './TodoMenu';
 export default {
+  components: {TodoMenu},
   data() {
     return {      
       isNavShow:false
     }
   },
   computed: {
-    toggleMenu:function() {
-      // 연결 안할 경우 :class="isNavShow?'fa-times':'fa-bars'"
+    toggleMenu:function() {      
       return this.isNavShow?{'fa-times':true}:{'fa-bars':true};
     }
-  },
-  components: {
-    TodoMenu
   },
 }
 </script>

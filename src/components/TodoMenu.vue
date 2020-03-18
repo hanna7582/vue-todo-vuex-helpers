@@ -7,7 +7,9 @@
                     <div class="menu-option">
                         <span>light</span>
                         <label>
-                            <input type="checkbox" v-model="themeChangeCheck" @change="themeChange({themeChangeCheck})">
+                            <input type="checkbox" 
+                                    v-model="themeChangeCheck" 
+                                    @change="themeChange({themeChangeCheck})">
                             <span></span>
                         </label>
                         <span>dark</span>
@@ -27,14 +29,14 @@ export default {
             themeChangeCheck:''
         }
     },
-    created() {
-        this.themeChangeCheck=this.themeCheck;
-    },
     computed: {
         ...mapState(['theme']),
         themeCheck:function(){
             return this.theme=='light'?false:true
         }
+    },
+    created() {
+        this.themeChangeCheck=this.themeCheck;
     },
     methods: {        
         ...mapMutations(['themeChange']),
