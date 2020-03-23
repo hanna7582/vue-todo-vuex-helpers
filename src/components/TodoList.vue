@@ -168,7 +168,7 @@ export default {
     text-align: center;
   }
 
-  ul{
+  .list{
     overflow: auto;
     height: calc(100vh - 265px);
     margin-top: 10px;
