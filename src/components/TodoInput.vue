@@ -8,8 +8,8 @@
       <font-awesome-icon icon="plus" :spin="spin" />
     </button>    
     <Modal v-if="showModal" @modalClose="showModal=false">      
-        <h3 slot="header">Message</h3>
-        <div slot="body">Todo empty.</div>        
+        <h3 slot="header">알림</h3>
+        <div slot="body">할일을 입력하세요.</div>        
     </Modal>
   </section>  
 </template>

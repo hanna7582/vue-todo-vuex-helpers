@@ -39,7 +39,7 @@
     </div>
 
     <Modal v-if="showModal" @modalClose="showModal=false">      
-      <h3 slot="header">Todo Detail</h3>
+      <h3 slot="header">할일 상세</h3>
       <div slot="body">{{todoDetail}}</div>      
     </Modal>
   </section>
