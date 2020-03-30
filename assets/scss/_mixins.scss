@@ -1,0 +1,45 @@
+@import '_variables.scss';
+@mixin container() {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@mixin pos-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin pos-fix($top:auto, $right:auto, $bottom:auto, $left:auto) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin pos-abs($top:auto, $right:auto, $bottom:auto, $left:auto) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin ellipsis {
+    overflow: $overflow_hid;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin btn {
+    width: 100%;
+    height: 30px;
+    background-color: $primary;
+    color: $white;
+}
+
+@mixin text-center {
+    text-align: center;
+    vertical-align: middle;
+}
